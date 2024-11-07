@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { Text, TouchableOpacity, View } from "react-native";
+import { View } from "react-native";
 
-export default function Index() {
+export default function LoadingBar() {
   const [isLoading, setIsLoading] = useState(false);
   const [loadingProgress, setLoadingProgress] = useState(0);
   useEffect(() => {
@@ -18,17 +18,6 @@ export default function Index() {
     setIsLoading(true);
   }
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-    <TouchableOpacity onPress={onPressLoadingButton}>
-      <Text>Start Count</Text>
-    </TouchableOpacity>
     <View style={{height: 10, width: `${loadingProgress}%`, backgroundColor: 'blue', marginHorizontal: 10}} />
-    </View>
-  );
+  )
 }
